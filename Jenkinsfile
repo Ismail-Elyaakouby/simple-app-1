@@ -1,3 +1,4 @@
+i
 pipeline {
     agent any
     tools { 
@@ -23,13 +24,13 @@ pipeline {
             }
         }
 	
-//		stage('SonarQube analysis') {
-//			// requires SonarQube Scanner 2.8+
-//		     steps {
-//			//sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.66.138:19000 -Dsonar.login=57f1b5c979c1618e43077fdfab801de05d2ede6e"
-//                        sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.1.22:19000 -Dsonar.login=admin -Dsonar.password=admin"
-//            }
-//	    }
+		stage('SonarQube analysis') {
+			// requires SonarQube Scanner 2.8+
+		     steps {
+			//sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.66.138:19000 -Dsonar.login=57f1b5c979c1618e43077fdfab801de05d2ede6e"
+                        sh "mvn sonar:sonar -Dsonar.host.url=http://192.168.1.22:19000 -Dsonar.login=admin -Dsonar.password=admin"
+            }
+	    }
 		
 		
     }
