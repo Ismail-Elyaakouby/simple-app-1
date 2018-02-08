@@ -84,7 +84,14 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
-
+  <dependency>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>3.4.0.905</version>
+      <type>pom</type>
+  </dependency>
+    
+    
     <!-- UI -->
     <dependency>
       <groupId>org.webjars</groupId>
@@ -126,7 +133,7 @@
     </dependency>
   </dependencies>
 
-  <build>
+ <build>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
@@ -152,6 +159,34 @@
             </goals>
           </execution>
         </executions>
+
+      
+      <plugin>  <!-- Create sources.jar -->
+            <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+      </plugin>
+            
+      <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+      </plugin>
+
       </plugin>
     </plugins>
   </build>
